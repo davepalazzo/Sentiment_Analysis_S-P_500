@@ -19,3 +19,21 @@ def pullMDA(yearRange,compName, resLst):
             output[year] = (compName,text)
             break
     return output
+
+
+def divide_chunks(Lst, n): 
+    ''' Split list into successive n chunks'''
+    for i in range(0, len(Lst), n):  
+        yield Lst[i:i + n] 
+
+        
+def extractTable(soup):
+    '''Extract the top ten companies from 1980-2013 '''
+    table = []
+    for div in soup.find_all('div', {'id':'sections'}):
+        for a in div.find_all('div', {'class':'dataRow'}):
+            for s in a.find_all('span', {'class': 'rowTitle'}):
+                table+=s
+    return(table)
+
+
