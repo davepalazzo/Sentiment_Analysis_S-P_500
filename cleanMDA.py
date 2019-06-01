@@ -1,4 +1,6 @@
 import requests
+import edgar
+import re
 from bs4 import BeautifulSoup as bsoup
 from collections import defaultdict
 
