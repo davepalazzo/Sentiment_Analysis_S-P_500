@@ -196,7 +196,7 @@ def MDA(name,ID,start_index,stop_index,doc_num,year):
     return name,MDA_text
 
 
-def getXy(df):
+def getXy(df, string=True):
     '''Input is the Cleaned_MDA df output is the dataframe used to run machine learning algorithms '''
     dic = defaultdict()
     for year in df:
@@ -229,5 +229,8 @@ def getXy(df):
     dataset = pd.DataFrame([np.array(X[0]),np.array(y[0])],columns=['2007','2008','2009','2010','2011','2012','2013','2014','2015','2016','2017'])
     df = dataset.transpose()
     df.columns=['X','y']
-    df['X'] = df['X'].map(lambda x: ' '.join(x))
-    return df
+    if string:
+        df['X'] = df['X'].map(lambda x: ' '.join(x))
+        return df
+    else:
+        return df
