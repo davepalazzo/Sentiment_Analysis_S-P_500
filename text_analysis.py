@@ -39,14 +39,10 @@ def text_analysis_sentenceall(df):
     return df
 
 def get_polarity(df):
-<<<<<<< HEAD
     '''Function takes in a df of a list of words, and their scores (polarity
     and subjectivity). It pulls only the polarity of that word into a df.'''
 
-    for i in range(len(analysis_df['X'])):
-=======
-    for i in range(len(df['X'])):
->>>>>>> 978f458be2c4cf5aa88c3c60d9da078e4e740bb0
+    for i in range(len(['X'])):
         polarity_score = []
         for t in df['X'][i]:
             polarity_score.append(t[1])
