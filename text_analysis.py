@@ -32,9 +32,9 @@ def text_analysis_sentenceall(df):
     return df
 
 def get_polarity(df):
-    for i in range(len(analysis_df['X'])):
+    for i in range(len(df['X'])):
         polarity_score = []
-        for t in analysis_df['X'][i]:
+        for t in df['X'][i]:
             polarity_score.append(t[1])
         df['X'][i] = polarity_score
     return df
