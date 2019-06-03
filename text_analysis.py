@@ -42,7 +42,7 @@ def get_polarity(df):
     '''Function takes in a df of a list of words, and their scores (polarity
     and subjectivity). It pulls only the polarity of that word into a df.'''
 
-    for i in range(len(['X'])):
+    for i in range(len(df['X'])):
         polarity_score = []
         for t in df['X'][i]:
             polarity_score.append(t[1])
