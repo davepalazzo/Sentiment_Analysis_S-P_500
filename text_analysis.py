@@ -85,3 +85,24 @@ def model_analysis(X,y):
     MAE = mean_absolute_error(y_test, y_pred)
 
     return xgb_reg,xgb_fit,score,y_pred,MAE,y_test
+
+def text_analysis_score(df):
+    '''Function takes in a df and look at the text of each word for the polarity
+    score, and returns sum of the positive and negative scores.'''
+
+    df['X'] = df['X'].map(lambda x: x.split(' '))
+    for i in range(len(df['X'])):
+        pos = []
+        neg = []
+        for word in df['X'][i]:
+            if word != '.':
+                blob = TextBlob(word)
+                sent = blob.sentiment
+                # eliminate words with no polarity
+                if sent.polarity > 0.0:
+                    pos.append(sent.polarity)
+                elif sent.polarity < 0.0:
+                    neg.append(sent.polarity)
+        df['X'][i] = sum(pos),len(pos),sum(neg),len(neg)
+        
+    return df
