@@ -84,4 +84,4 @@ def model_analysis(X,y):
     y_pred = xgb_reg.predict(X_test)
     MAE = mean_absolute_error(y_test, y_pred)
 
-    return xgb_reg,xgb_fit,score,y_pred,MAE
+    return xgb_reg,xgb_fit,score,y_pred,MAE,y_test
