@@ -88,7 +88,7 @@ def model_analysis(X,y):
     'eta':.3,
     'subsample': 1,
     'colsample_bytree': 1,
-    'objective':'reg:linear',
+    'objective':'reg:squarederror',
 }
     # find the best max_depth and min_child_weight parameter
     gridsearch_params = [
