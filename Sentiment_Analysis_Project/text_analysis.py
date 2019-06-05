@@ -99,9 +99,6 @@ def model_analysis(X,y):
     min_mae = float("Inf")
     best_params = None
     for max_depth, min_child_weight in gridsearch_params:
-        print("CV with max_depth={}, min_child_weight={}".format(
-                             max_depth,
-                             min_child_weight))
         # Update our parameters
         params['max_depth'] = max_depth
         params['min_child_weight'] = min_child_weight
@@ -119,10 +116,11 @@ def model_analysis(X,y):
         # Update best MAE
         mean_mae = cv_results['test-mae-mean'].min()
         boost_rounds = cv_results['test-mae-mean'].argmin()
-        print("\tMAE {} for {} rounds".format(mean_mae, boost_rounds))
         if mean_mae < min_mae:
             min_mae = mean_mae
             best_params = (max_depth,min_child_weight)
+    
+    print("Best params: {}, {}, MAE: {}".format(best_params[0], best_params[1], min_mae))
             
     xgb_reg = xgb.XGBRegressor(max_depth=best_params[0],min_child_weight=best_params[1],n_estimators=300, n_jobs=-1,subsample=.7,random_seed=3)
     xgb_fit = xgb_reg.fit(X_train,y_train)
