@@ -1,7 +1,7 @@
 
 **Summary** - This repository will explore the relationship between the sentiment of annual 10-K filings for the companies that make up the S&P 500 and the annual growth rate percentage of U.S. gross domestic product. Refer to the notebook Economic_Forecasting. 
 
-[Final_Report](https://hub.mybinder.org/user/davepalazzo-sen-analysis_sp_500-z9229mqf/notebooks/Economic_Forecasting.ipynb)
+[Final_Report]([![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/davepalazzo/Sentiment_Analysis_SP_500/master?filepath=Sentiment_Analysis_Project%2FEconomic_Forecasting.ipynb))
 
 **Contributors** - David Palazzo and Samantha Werdel 
 
