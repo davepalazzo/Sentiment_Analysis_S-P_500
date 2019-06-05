@@ -123,7 +123,7 @@ def model_analysis(X,y):
 #             min_mae = mean_mae
 #             best_params = (max_depth,min_child_weight)
             
-    xgb_reg = xgb.XGBRegressor(max_depth=3,min_child_weight=1,n_estimators=100, n_jobs=-1, subsample=.7,random_seed=3)
+    xgb_reg = xgb.XGBRegressor(max_depth=3,min_child_weight=1,n_estimators=300, n_jobs=-1, subsample=.7,random_seed=3)
     xgb_fit = xgb_reg.fit(X_train,y_train)
     score = xgb_reg.score(X_test,y_test)
     y_pred = xgb_reg.predict(X_test)
