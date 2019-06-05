@@ -77,6 +77,25 @@ def model_analysis(X,y):
         # change the array dimmensions
         X_train = X_train[:, np.newaxis]
         X_test = X_test[:, np.newaxis]
+    
+    params = {
+    # Parameters that we are going to tune.
+    'max_depth':6,
+    'min_child_weight': 1,
+    'eta':.3,
+    'subsample': 1,
+    'colsample_bytree': 1,
+    'objective':'reg:linear'}
+    
+    cv_results = xgb.cv(
+    params,
+    np.matrix([X_train,y_train],
+    num_boost_round=num_boost_round,
+    seed=42,
+    nfold=5,
+    metrics={'mae'},
+    early_stopping_rounds=10)
+    
 
     xgb_reg = xgb.XGBRegressor(max_depth=6,n_estimators=300, n_jobs=-1, subsample=.7,random_seed=3)
     xgb_fit = xgb_reg.fit(X_train,y_train)
@@ -84,7 +103,7 @@ def model_analysis(X,y):
     y_pred = xgb_reg.predict(X_test)
     MAE = mean_absolute_error(y_test, y_pred)
 
-    return xgb_reg,xgb_fit,score,y_pred,MAE,y_test
+    return xgb_fit,score,y_pred,MAE,y_test,cv_results
 
 def text_analysis_score(df):
     '''Function takes in a df and look at the text of each word for the polarity
