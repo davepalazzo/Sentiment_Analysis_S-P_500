@@ -120,7 +120,7 @@ def model_analysis(X,y):
     MAE = mean_absolute_error(y_test, y_pred)
 
     #return xgb_fit,score,y_pred,MAE,y_test,cv_results,params
-    return ("Best params: {}, {}, MAE: {}".format(best_params[0], best_params[1], min_mae)
+    return ("Best params: {}, {}, MAE: {}".format(best_params[0], best_params[1], min_mae))
 
 def text_analysis_score(df):
     '''Function takes in a df and look at the text of each word for the polarity
