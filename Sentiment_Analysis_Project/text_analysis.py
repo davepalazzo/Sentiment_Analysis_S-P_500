@@ -106,7 +106,7 @@ def model_analysis(X,y):
     y_pred = xgb_reg.predict(X_test)
     MAE = mean_absolute_error(y_test, y_pred)
 
-    return xgb_fit,score,y_pred,MAE,y_test,cv_results
+    return xgb_fit,score,y_pred,MAE,y_test,cv_results,params
 
 def text_analysis_score(df):
     '''Function takes in a df and look at the text of each word for the polarity
