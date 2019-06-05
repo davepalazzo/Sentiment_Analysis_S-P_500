@@ -85,7 +85,8 @@ def model_analysis(X,y):
     'eta':.3,
     'subsample': 1,
     'colsample_bytree': 1,
-    'objective':'reg:linear'}
+    'objective':'reg:linear',
+    }
     
     cv_results = xgb.cv(
     params,
@@ -95,7 +96,6 @@ def model_analysis(X,y):
     nfold=5,
     metrics={'mae'},
     early_stopping_rounds=10)
-    
 
     xgb_reg = xgb.XGBRegressor(max_depth=6,n_estimators=300, n_jobs=-1, subsample=.7,random_seed=3)
     xgb_fit = xgb_reg.fit(X_train,y_train)
