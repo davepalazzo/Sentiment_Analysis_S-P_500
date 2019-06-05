@@ -6,7 +6,7 @@
 **Motivation** - Economic indicators, particularly recessions are notoriously difficult to predict. Of the 469 downturns since 1988, the International Monetary Fund (IMF) had correctly predicted four by the spring of the preceding year.
 https://www.fathom-consulting.com/the-economist-who-cried-wolf/
 
-Our goal is to use sentiment analysis on the 10-K fillings of companies in the S&P500 for modeling fluctuations in US annual GDP to better predict economic volitility.
+Our goal is to use sentiment analysis on the 10-K fillings of companies in the S&P500 for modeling fluctuations in US annual GDP to better predict economic volatility.
 
 **Libraries** - The code in this repository is written in Python, utilizing the following libraries:
    -      Numpy
