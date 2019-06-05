@@ -78,6 +78,7 @@ def model_analysis(X,y):
         X_train = X_train[:, np.newaxis]
         X_test = X_test[:, np.newaxis]
     
+    
     params = {
     # Parameters that we are going to tune.
     'max_depth':6,
@@ -88,9 +89,11 @@ def model_analysis(X,y):
     'objective':'reg:linear',
     }
     
+    dtrain = xgb.DMatrix(X_train, label=y_train)
+    
     cv_results = xgb.cv(
     params,
-    np.matrix([X_train,y_train],
+    dtrain,
     num_boost_round=num_boost_round,
     seed=42,
     nfold=5,
