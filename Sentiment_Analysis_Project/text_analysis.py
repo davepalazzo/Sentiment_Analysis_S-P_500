@@ -80,6 +80,16 @@ def model_analysis(X,y):
     
     dtrain=xgb.DMatrix(X_train,label=y_train)
     
+    params = {
+    # Parameters that we are going to tune.
+    'max_depth':6,
+    'min_child_weight': 1,
+    'eta':.3,
+    'subsample': 1,
+    'colsample_bytree': 1,
+    'objective':'reg:linear',
+}
+    
     gridsearch_params = [
     (max_depth, min_child_weight)
     for max_depth in range(3,9)
