@@ -1,7 +1,7 @@
 
-**Summary** - This repository will explore the relationship between the sentiment of annual 10-K filings for the companies that make up the S&P 500 and the annual grouth rate percentage of U.S. gross domestic product.  
+**Summary** - This repository will explore the relationship between the sentiment of annual 10-K filings for the companies that make up the S&P 500 and the annual growth rate percentage of U.S. gross domestic product. Refer to the notebook Economic_Analysis.  
 
-**Team Members** - David Palazzo and Samantha Werdel 
+**Contributors** - David Palazzo and Samantha Werdel 
 
 **Motivation** - Economic indicators, particularly recessions are notoriously difficult to predict. Of the 469 downturns since 1988, the International Monetary Fund (IMF) had correctly predicted four by the spring of the preceding year.
 https://www.fathom-consulting.com/the-economist-who-cried-wolf/
@@ -14,6 +14,7 @@ Our goal is to use sentiment analysis on the 10-K fillings of companies in the S
    -      Edgar – used to scrape the SEC website for 10-k documents
    -      Genism
    -      Sklearn
+   -      TextBlob
 
 **Data Collection** - We will scrape the SEC website for 10-K fillings of companies in the S&P500 utilizing the Edgar package in python to facilitate this process.
 
