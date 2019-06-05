@@ -94,7 +94,7 @@ def model_analysis(X,y):
     cv_results = xgb.cv(
     params,
     dtrain,
-    num_boost_round=num_boost_round,
+    num_boost_round=999,
     seed=42,
     nfold=5,
     metrics={'mae'},
