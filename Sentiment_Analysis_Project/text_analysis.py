@@ -77,14 +77,58 @@ def model_analysis(X,y):
         # change the array dimmensions
         X_train = X_train[:, np.newaxis]
         X_test = X_test[:, np.newaxis]
+    
+    # create a matrix of X and y train dataset
+    dtrain=xgb.DMatrix(X_train,label=y_train)
+    
+    params = {
+    # Parameters that we are going to tune.
+    'max_depth':6,
+    'min_child_weight': 1,
+    'eta':.3,
+    'subsample': 1,
+    'colsample_bytree': 1,
+    'objective':'reg:squarederror',
+}
+    # find the best max_depth and min_child_weight parameter
+    gridsearch_params = [
+    (max_depth, min_child_weight)
+    for max_depth in range(3,9)
+    for min_child_weight in range(1,3)
+]
+    min_mae = float("Inf")
+    best_params = None
+    for max_depth, min_child_weight in gridsearch_params:
+        # Update our parameters
+        params['max_depth'] = max_depth
+        params['min_child_weight'] = min_child_weight
+        # Run CV
+        cv_results = xgb.cv(
+            params,
+            dtrain,
+            num_boost_round=999,
+            seed=42,
+            nfold=5,
+            metrics={'mae'},
+            early_stopping_rounds=10
+    )
 
-    xgb_reg = xgb.XGBRegressor(max_depth=6,n_estimators=300, n_jobs=-1, subsample=.7,random_seed=3)
+        # Update best MAE
+        mean_mae = cv_results['test-mae-mean'].min()
+        boost_rounds = cv_results['test-mae-mean'].argmin()
+        if mean_mae < min_mae:
+            min_mae = mean_mae
+            best_params = (max_depth,min_child_weight)
+    
+    print("Best params: {}, {}, MAE: {}".format(best_params[0], best_params[1], min_mae))
+            
+    xgb_reg = xgb.XGBRegressor(max_depth=best_params[0],min_child_weight=best_params[1],n_estimators=300, n_jobs=-1,subsample=.7,random_seed=3)
     xgb_fit = xgb_reg.fit(X_train,y_train)
     score = xgb_reg.score(X_test,y_test)
     y_pred = xgb_reg.predict(X_test)
     MAE = mean_absolute_error(y_test, y_pred)
 
-    return xgb_reg,xgb_fit,score,y_pred,MAE,y_test
+    return xgb_fit,score,y_pred,MAE,y_test
 
 def text_analysis_score(df):
     '''Function takes in a df and look at the text of each word for the polarity
