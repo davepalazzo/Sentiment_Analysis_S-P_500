@@ -3,8 +3,6 @@
 
 [Final_Report](https://mybinder.org/v2/gh/davepalazzo/Sentiment_Analysis_SP_500/master?filepath=Sentiment_Analysis_Project%2FEconomic_Forecasting.ipynb)
 
-**Contributors** - David Palazzo and Samantha Werdel 
-
 **Motivation** - Economic indicators, particularly recessions are notoriously difficult to predict. Of the 469 downturns since 1988, the International Monetary Fund (IMF) had correctly predicted four by the spring of the preceding year.
 https://www.fathom-consulting.com/the-economist-who-cried-wolf/
 
@@ -18,7 +16,10 @@ Our goal is to use sentiment analysis on the 10-K fillings of companies in the S
    -      Sklearn
    -      TextBlob
 
-**Data Collection** - We will scrape the SEC website for 10-K fillings of companies in the S&P500 utilizing the Edgar package in python to facilitate this process. [Data Gathering](scrape_top10_MDA.ipynb)
+**Data Collection** - We will scrape the SEC website for 10-K fillings of companies in the S&P500 utilizing the Edgar package in python to facilitate this process. Refer to the following notebooks for the code used in to gather and clean the data. 
+
+[Data Gathering](scrape_top10_MDA.ipynb)
+[Data Cleaning](Clean_MDAtext.ipynb)
 
 **Literature Review** - Through our review of academic papers we found several using sentiment analysis on various corpora to predict stock prices and company metrics, however, we were unable to find papers linking sentiment of public company filings to economic factors such as GDP. Refer to the following papers, which inspired the project:
  
