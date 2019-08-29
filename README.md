@@ -27,7 +27,7 @@ Our goal is to use sentiment analysis on the 10-K fillings of companies in the S
 
 **Data Clean Up** - For our analysis, we want to focus on the “Management’s Discussion and Analysis of Financial Condition and Results of Operations” section of the 10-K filings. We will need to look through each 10-K filing and pull out that section. Once we have pulled the section from each companies filings, we will clean the text to then run in our model.
 
-[Data Cleaning](Sentiment_Analysis_Project/Clean_MDAtext.ipynb)
+[Data Cleaning](https://mybinder.org/v2/gh/davepalazzo/Sentiment_Analysis_SP_500/master?filepath=Sentiment_Analysis_Project/Clean_MDAtext.ipynb)
 
 **Predictive Task** - We will use Sklearn’s CountVectorizer to tokenize our cleaned text to see if using sentiment analysis we can predict fluctuations in US annual GDP.
 
