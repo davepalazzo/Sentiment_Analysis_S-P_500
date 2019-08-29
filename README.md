@@ -1,5 +1,5 @@
 
-**Summary** - This repository will explore the relationship between the sentiment of annual 10-K filings for the companies that make up the S&P 500 and the annual growth rate percentage of U.S. gross domestic product. Refer to the notebook Economic_Forecasting. 
+**Summary** - This repository explores the relationship between the sentiment of annual 10-K filings for the companies that make up the S&P 500 and their predictive capabilities for annual growth rate percentage of U.S. gross domestic product. Refer to the notebook Economic_Forecasting. 
 
 [Final_Report](https://mybinder.org/v2/gh/davepalazzo/Sentiment_Analysis_SP_500/master?filepath=Sentiment_Analysis_Project%2FEconomic_Forecasting.ipynb)
 
