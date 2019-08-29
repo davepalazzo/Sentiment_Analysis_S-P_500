@@ -18,7 +18,7 @@ Our goal is to use sentiment analysis on the 10-K fillings of companies in the S
 
 **Data Collection** - We will scrape the SEC website for 10-K fillings of companies in the S&P500 utilizing the Edgar package in python to facilitate this process. Refer to the following notebook for the code used in to gather our data. 
 
-[Data Gathering](Sentiment_Analysis_Project/scrape_top10_MDA.ipynb)
+[Data Gathering](https://mybinder.org/v2/gh/davepalazzo/Sentiment_Analysis_SP_500/master?filepath=Sentiment_Analysis_Project/scrape_top10_MDA.ipynb)
 
 **Literature Review** - Through our review of academic papers we found several using sentiment analysis on various corpora to predict stock prices and company metrics, however, we were unable to find papers linking sentiment of public company filings to economic factors such as GDP. Refer to the following papers, which inspired the project:
  
