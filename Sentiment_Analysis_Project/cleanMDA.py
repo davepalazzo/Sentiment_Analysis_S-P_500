@@ -208,7 +208,7 @@ def getXy(df, string=True):
     df = pd.DataFrame.from_dict([dic])
 
 
-    gdp = pd.read_csv('gdp_annual.csv')
+    gdp = pd.read_csv('./Sentiment_Analysis_Project/gdp_annual.csv')
     USA = np.array(gdp[gdp['Data Source'] == 'United States'])
     gdp_USA = pd.DataFrame(USA, columns=['Country Name', 'Country COde', 'Indicator Name', 'Indicator Code',
                                                      '1960','1961','1962','1963','1964','1965','1966','1967','1968','1969',
